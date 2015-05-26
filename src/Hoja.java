@@ -15,6 +15,10 @@ public class Hoja {
 		
 	}
 	
+	public void eliminarTexto (int Texto){
+		this.Textos.remove(Texto);
+	}
+	
 	public void imprimirHoja () {
 		int i = 0;
 		for (Texto textos : this.Textos ){
@@ -24,6 +28,13 @@ public class Hoja {
 		}
 		
 	}
-
+	
+	public Texto getTexto (int Texto) {
+		return Textos.get(Texto);
+	}
+	
+	public int cantidadTextos (){
+		return Textos.size();
+	}
 
 }
