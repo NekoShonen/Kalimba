@@ -5,21 +5,21 @@ import java.util.List;
 public class Kalimba {
 
 	List <Hoja> Hojas= new ArrayList <Hoja>();
-	Hoja HojaActiva;
+    Hoja HojaActiva;
 	List <Texto> PortaPapeles = new ArrayList <Texto>();
 	List <Integer> All = new ArrayList <Integer>();
 	
 	public Kalimba (Hoja hoja,List<Hoja> hojas) {
-		this.HojaActiva = hoja;
+		this.setHojaActiva(hoja);
 		this.Hojas = hojas;
 	}
 	
 	public void imprimirHojaActiva () {
-		HojaActiva.imprimirHoja();
+		getHojaActiva().imprimirHoja();
 	}
 	
 	public void cualEsHojaActiva () {
-		System.out.println(this.HojaActiva);
+		System.out.println(this.getHojaActiva());
 	}
 	
 	
@@ -47,10 +47,18 @@ public class Kalimba {
 	}
 	
 	public void seleccionarTodo (){
-		for (Integer i = 0;i < HojaActiva.cantidadTextos();i++){
+		for (Integer i = 0;i < getHojaActiva().cantidadTextos();i++){
 			All.add(i);
 		}
 		 
+	}
+
+	public Hoja getHojaActiva() {
+		return HojaActiva;
+	}
+
+	public void setHojaActiva(Hoja hojaActiva) {
+		HojaActiva = hojaActiva;
 	}
 	
 
